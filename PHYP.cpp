@@ -9,7 +9,7 @@ void getform(form& f, ifstream &f1) {
 		if (s == "куб") f = cube;
 		if (s == "цилиндр") f = cilinder;
 		if (s == "диск") f = disk;
-		if (f != ball && f != cube && f != cilinder && f != disk) throw "Ќеопознанна€ форма: " + s + '\n';
+		if (s != "шар" && s != "куб" && s != "цилиндр" && s != "диск") throw "Ќеопознанна€ форма: " + s + '\n';
 	}
 	catch (string s) {
 		cerr << s;
