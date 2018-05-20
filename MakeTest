@@ -12,8 +12,7 @@ cmake -G "Unix Makefiles"
 
 make 
 
-if [ -s "errors.txt" ]; then echo "Тест не пройден"; else echo "Тест 
-пройден"; 
+if [ -s "errors.txt" ]; then echo "РўРµСЃС‚ РїСЂРѕР№РґРµРЅ"; else echo "РўРµСЃС‚ РЅРµ РїСЂРѕР№РґРµРЅ"; 
 rm "errors.txt";
 fi
 
