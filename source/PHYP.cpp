@@ -5,29 +5,29 @@ void getform(form& f, ifstream &f1) {
 	string s;
 	try {
 		f1 >> s;
-		if (s == "шар") f = ball;
-		if (s == "куб") f = cube;
-		if (s == "цилиндр") f = cilinder;
-		if (s == "диск") f = disk;
-		if (s != "шар" && s != "куб" && s != "цилиндр" && s != "диск") throw "Неопознанная форма: " + s + '\n';
+		if (s == "ГёГ Г°") f = ball;
+		if (s == "ГЄГіГЎ") f = cube;
+		if (s == "Г¶ГЁГ«ГЁГ­Г¤Г°") f = cilinder;
+		if (s == "Г¤ГЁГ±ГЄ") f = disk;
+		if (s != "ГёГ Г°" && s != "ГЄГіГЎ" && s != "Г¶ГЁГ«ГЁГ­Г¤Г°" && s != "Г¤ГЁГ±ГЄ") throw "ГЌГҐГ®ГЇГ®Г§Г­Г Г­Г­Г Гї ГґГ®Г°Г¬Г : " + s + '\n';
 	}
 	catch (string s) {
 		cerr << s;
 		f = none;
 	}
 	catch (...) {
-		cerr << "Неверный формат исходных данных\n";
+		cerr << "ГЌГҐГўГҐГ°Г­Г»Г© ГґГ®Г°Г¬Г ГІ ГЁГ±ГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ\n";
 		f = none;
 	}
 
 }
 void PhPendulum::put_form(string s) {
 	try {
-		if (s == "шар") f = ball;
-		if (s == "куб") f = cube;
-		if (s == "цилиндр") f = cilinder;
-		if (s == "диск") f = disk;
-		if (f != ball && f != cube && f != cilinder && f != disk) throw "Неопознанная форма: " + s + '\n';
+		if (s == "ГёГ Г°") f = ball;
+		if (s == "ГЄГіГЎ") f = cube;
+		if (s == "Г¶ГЁГ«ГЁГ­Г¤Г°") f = cilinder;
+		if (s == "Г¤ГЁГ±ГЄ") f = disk;
+		if (f != ball && f != cube && f != cilinder && f != disk) throw "ГЌГҐГ®ГЇГ®Г§Г­Г Г­Г­Г Гї ГґГ®Г°Г¬Г : " + s + '\n';
 		def();
 	}
 	catch (string s) {
@@ -36,7 +36,7 @@ void PhPendulum::put_form(string s) {
 }
 void PhPendulum::put_r(double d) {
 	try {
-		if(d<=0) throw "Радиус тела должна быть положительным числом \n";
+		if(d<=0) throw "ГђГ Г¤ГЁГіГ± ГІГҐГ«Г  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЇГ®Г«Г®Г¦ГЁГІГҐГ«ГјГ­Г»Г¬ Г·ГЁГ±Г«Г®Г¬ \n";
 		r = d;
 		def();
 	}
@@ -54,11 +54,11 @@ form PhPendulum::get_form() {
 	return f;
 }
 string PhPendulum::get_form_s() {
-	if (f == ball) return "шар";
-	if (f == cube) return "куб";
-	if (f == cilinder) return "цилиндр";
-	if (f == disk) return "диск";
-	if (f == none) return "бесформенный";
+	if (f == ball) return "ГёГ Г°";
+	if (f == cube) return "ГЄГіГЎ";
+	if (f == cilinder) return "Г¶ГЁГ«ГЁГ­Г¤Г°";
+	if (f == disk) return "Г¤ГЁГ±ГЄ";
+	if (f == none) return "ГЎГҐГ±ГґГ®Г°Г¬ГҐГ­Г­Г»Г©";
 }
 void PhPendulum::def() {
 	if (f == ball) {
@@ -94,9 +94,9 @@ PhPendulum::PhPendulum(ifstream & f1) {
 		f1 >> v0;
 		getform(f, f1);
 		f1 >> r;
-		if (r <= 0) throw "Радиус тела должна быть положительным числом \n";
-		if (m <= 0) throw "Масса маятника должна быть положительным числом \n";
-		if (l <= 0) throw "Длина маятника должна быть положительным числом \n";
+		if (r <= 0) throw "ГђГ Г¤ГЁГіГ± ГІГҐГ«Г  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЇГ®Г«Г®Г¦ГЁГІГҐГ«ГјГ­Г»Г¬ Г·ГЁГ±Г«Г®Г¬ \n";
+		if (m <= 0) throw "ГЊГ Г±Г±Г  Г¬Г ГїГІГ­ГЁГЄГ  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЇГ®Г«Г®Г¦ГЁГІГҐГ«ГјГ­Г»Г¬ Г·ГЁГ±Г«Г®Г¬ \n";
+		if (l <= 0) throw "Г„Г«ГЁГ­Г  Г¬Г ГїГІГ­ГЁГЄГ  Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј ГЇГ®Г«Г®Г¦ГЁГІГҐГ«ГјГ­Г»Г¬ Г·ГЁГ±Г«Г®Г¬ \n";
 		if (f == none)
 			SimpleMathPendulum::def();
 		else
@@ -108,6 +108,6 @@ PhPendulum::PhPendulum(ifstream & f1) {
 	}
 	catch (...) {
 		existence = false;
-		cerr << "Неверный формат исходных данных \n";
+		cerr << "ГЌГҐГўГҐГ°Г­Г»Г© ГґГ®Г°Г¬Г ГІ ГЁГ±ГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ \n";
 	}
 }
