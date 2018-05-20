@@ -1,0 +1,20 @@
+# !/bin/bash
+
+if  [ -e "errors.txt" ] ; then rm "errors.txt"; fi
+
+touch "errors.txt"
+
+exec 6>&2
+
+exec 2>"errors.txt"
+
+cmake -G "Unix Makefiles"
+
+make 
+
+if [ -s "errors.txt" ]; then echo "Тест не пройден"; else echo "Тест 
+пройден"; 
+rm "errors.txt";
+fi
+
+exec 2>&6
