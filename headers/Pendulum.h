@@ -10,12 +10,12 @@ static const double pi = 3.1415926535;
 void Foucault(double, double, double, double, double &, double &);
 class Pendulum {
 protected: bool existence = true;
-	double x0; // начальная координата
-	double v0; //начальная скорость
-	double m; //масса маятника
-	double l; //длина подвеса
-	double a; //угол начального отклонения
-	double A; //амплитуда
+	double x0; // Г­Е•Г·Е•Г«ГјГ­Е•Л™ Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е•
+	double v0; //Г­Е•Г·Е•Г«ГјГ­Е•Л™ Е„Д™Г®Д‘Г®Е„Е€Гј
+	double m; //Д›Е•Е„Е„Е• Д›Е•Л™Е€Г­ДЌД™Е•
+	double l; //Г¤Г«ДЌГ­Е• ДЏГ®Г¤ГўДєЕ„Е•
+	double a; //ГіДѓГ®Г« Г­Е•Г·Е•Г«ГјГ­Г®ДѓГ® Г®Е€Д™Г«Г®Г­ДєГ­ДЌЛ™
+	double A; //Е•Д›ДЏГ«ДЌЕ€ГіГ¤Е•
 	virtual void def() = 0;
 public:
 	void put_x0(double d);
@@ -33,8 +33,8 @@ public:
 
 class SimpleMathPendulum : public Pendulum {
 protected:
-	double T; //период колебаний
-	double w; //частота колебаний
+	double T; //ДЏДєД‘ДЌГ®Г¤ Д™Г®Г«ДєГЎЕ•Г­ДЌГ©
+	double w; //Г·Е•Е„Е€Г®Е€Е• Д™Г®Г«ДєГЎЕ•Г­ДЌГ©
 	void def();
 public:
 	SimpleMathPendulum();
@@ -51,9 +51,9 @@ class PhPendulum : public SimpleMathPendulum {
 private:	
 	void def();
 	form f;
-	double r; //радиус шара, радиус цилиндра, сторона куба, малый радиус диска
-	double J;// момент импульса
-	double L;//приведенная длина
+	double r; //Д‘Е•Г¤ДЌГіЕ„ Е™Е•Д‘Е•, Д‘Е•Г¤ДЌГіЕ„ Г¶ДЌГ«ДЌГ­Г¤Д‘Е•, Е„Е€Г®Д‘Г®Г­Е• Д™ГіГЎЕ•, Д›Е•Г«Е±Г© Д‘Е•Г¤ДЌГіЕ„ Г¤ДЌЕ„Д™Е•
+	double J;// Д›Г®Д›ДєГ­Е€ ДЌД›ДЏГіГ«ГјЕ„Е•
+	double L;//ДЏД‘ДЌГўДєГ¤ДєГ­Г­Е•Л™ Г¤Г«ДЌГ­Е•
 public:
 	void put_form(string s);
 	void put_r(double d);
