@@ -1,0 +1,21 @@
+\usepackage[usenames]{color}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{ulem}
+\usepackage[pdfborder=0 0 0,colorlinks,linkcolor=black]{hyperref}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{titling}
+\usepackage{geometry}
+\geometry{pdftex, a4paper}
+\geometry{left=2cm, right=2cm, top = 2cm}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\definecolor{mycol1}{rgb}{0.58,0.78,0.2}
+\DeclareCaptionFormat{listing}{\colorbox{mycol1}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing}
+\pretolerance10000
