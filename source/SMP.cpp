@@ -11,7 +11,7 @@ double SimpleMathPendulum::get_T(){
 double SimpleMathPendulum::x(double t) {
 	if (existence)
 		return A*sin(w*t + a);
-	cerr << "Ìàÿòíèê íå ñóùåñòâóåò \n";
+	cerr << "ÄšÅ•Ë™ÅˆÃ­ÄÄ™ Ã­Äº Å„Ã³Å¯ÄºÅ„ÅˆÃ¢Ã³ÄºÅˆ \n";
 	return NULL;
 }
 void SimpleMathPendulum::def() {
@@ -36,8 +36,8 @@ SimpleMathPendulum::SimpleMathPendulum(ifstream & f1) {
 		f1 >> m;
 		f1 >> l;
 		f1 >> v0;
-		if (m <= 0) throw "Ìàññà ìàÿòíèêà äîëæíà áûòü ïîëîæèòåëüíûì ÷èñëîì \n";
-		if (l <= 0) throw "Äëèíà ìàÿòíèêà äîëæíà áûòü ïîëîæèòåëüíûì ÷èñëîì \n";
+		if (m <= 0) throw "ÄšÅ•Å„Å„Å• Ä›Å•Ë™ÅˆÃ­ÄÄ™Å• Ã¤Ã®Ã«Ä‡Ã­Å• Ã¡Å±ÅˆÃ¼ ÄÃ®Ã«Ã®Ä‡ÄÅˆÄºÃ«Ã¼Ã­Å±Ä› Ã·ÄÅ„Ã«Ã®Ä› \n";
+		if (l <= 0) throw "Ã„Ã«ÄÃ­Å• Ä›Å•Ë™ÅˆÃ­ÄÄ™Å• Ã¤Ã®Ã«Ä‡Ã­Å• Ã¡Å±ÅˆÃ¼ ÄÃ®Ã«Ã®Ä‡ÄÅˆÄºÃ«Ã¼Ã­Å±Ä› Ã·ÄÅ„Ã«Ã®Ä› \n";
 		def();
 	}
 	catch (const char* s) {
@@ -45,7 +45,7 @@ SimpleMathPendulum::SimpleMathPendulum(ifstream & f1) {
 		existence = false;
 	}
 	catch (...) {
-		cout << "Íåâåðíûé ôîðìàò èñõîäíûõ äàííûõ \n";
+		cout << "ÃÄºÃ¢ÄºÄ‘Ã­Å±Ã© Ã´Ã®Ä‘Ä›Å•Åˆ ÄÅ„Å‘Ã®Ã¤Ã­Å±Å‘ Ã¤Å•Ã­Ã­Å±Å‘ \n";
 		existence = false;
 	}
 }
@@ -72,6 +72,6 @@ void SimpleMathPendulum::Fou(double &x, double &y, double t, double f) {
 	}
 	else {
 		x = y = 0;
-		cout << "Ìàÿòíèê íå ñóùåñòâóåò \n";
+		cout << "ÄšÅ•Ë™ÅˆÃ­ÄÄ™ Ã­Äº Å„Ã³Å¯ÄºÅ„ÅˆÃ¢Ã³ÄºÅˆ \n";
 	}
 }
