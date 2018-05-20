@@ -1,7 +1,7 @@
 #include "Pendulum.h"
 #include <cmath>
 using namespace std;
-//доопредели функции для базового класса
+//Г¤Г®Г®ДЏД‘ДєГ¤ДєГ«ДЌ ГґГіГ­Д™Г¶ДЌДЌ Г¤Г«Л™ ГЎЕ•Г§Г®ГўГ®ДѓГ® Д™Г«Е•Е„Е„Е•
 void Pendulum::put_x0(double d) {
 	x0 = d;
 	def();
@@ -12,7 +12,7 @@ void Pendulum::put_v0(double d) {
 }
 void Pendulum::put_m(double d) {
 	try {
-		if (d <= 0) throw "Масса маятника должна быть положительным числом\n";
+		if (d <= 0) throw "ДљЕ•Е„Е„Е• Д›Е•Л™Е€Г­ДЌД™Е• Г¤Г®Г«Д‡Г­Е• ГЎЕ±Е€Гј ДЏГ®Г«Г®Д‡ДЌЕ€ДєГ«ГјГ­Е±Д› Г·ДЌЕ„Г«Г®Д›\n";
 		m = d;
 		def();
 	}
@@ -22,7 +22,7 @@ void Pendulum::put_m(double d) {
 }
 void Pendulum::put_l(double d) {
 	try {
-		if (d <= 0) throw "Длина маятника должна быть положительным числом\n";
+		if (d <= 0) throw "Г„Г«ДЌГ­Е• Д›Е•Л™Е€Г­ДЌД™Е• Г¤Г®Г«Д‡Г­Е• ГЎЕ±Е€Гј ДЏГ®Г«Г®Д‡ДЌЕ€ДєГ«ГјГ­Е±Д› Г·ДЌЕ„Г«Г®Д›\n";
 		l = d;
 		def();
 	}
